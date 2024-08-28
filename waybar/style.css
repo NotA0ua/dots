@@ -1,0 +1,132 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+  border: none;
+  border-radius: 0px;
+  font-family:
+    JetBrains Mono,
+    FontAwesome,
+    Noto Sans CJK;
+  font-size: 16px;
+  font-weight: bold;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: @foreground;
+}
+
+#workspaces {
+  background: @background;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 10px 5px 5px;
+  border-radius: 8px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+#workspaces button {
+  padding: 0px 5px;
+  border-radius: 8px;
+  color: @color8;
+}
+
+#workspaces button.active {
+  color: @color7;
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+#workspaces button:hover {
+  background-color: @color8;
+  color: @background;
+  border-radius: 8px;
+}
+
+#custom-date,
+#clock,
+#pulseaudio,
+#pulseaudio.microphone,
+#network,
+#cpu,
+#tray,
+#custom-swaync-client,
+#memory {
+  background: @background;
+  color: @color7;
+  padding: 0px 10px 0px 10px;
+  margin: 5px 0px 0px 0px;
+}
+
+#clock {
+  color: @color9;
+  background-color: @background;
+  border-radius: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-top: 5px;
+  font-weight: bolder;
+}
+
+#tray {
+  border-radius: 8px 0px 0px 8px;
+}
+
+
+#custom-playerlabel {
+  background: @background;
+  padding-left: 10px;
+  padding-right: 15px;
+  border-radius: 8px 0px 0px 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 0px;
+  font-weight: bolder;
+  font-style: normal;
+}
+
+#custom-cava_mviz {
+  background: @background;
+  padding-left: 10px;
+  padding-right: 15px;
+  border-radius: 0px 8px 8px 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: bolder;
+  font-style: normal;
+}
+
+#window {
+  background: @background;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 8px;
+  margin-top: 5px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+#cpu {
+  font-weight: bold;
+}
+
+#memory {
+  border-radius: 0px 8px 8px 0px;
+  font-weight: bold;
+}
+
+#disk {
+  border-radius: 8px;
+  margin: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 0px 10px 0px 10px;
+  font-weight: bold;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}

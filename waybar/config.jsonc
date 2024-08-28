@@ -1,0 +1,124 @@
+{
+  "reload_style_on_change": true,
+  "position": "top",
+  "layer": "top",
+  "height": 16,
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/playerlabel",
+    "custom/cava_mviz"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "tray",
+    "custom/swaync-client",
+    "network",
+    "pulseaudio",
+    "pulseaudio#microphone",
+    "cpu",
+    "memory",
+    "clock"
+  ],
+  "clock": {
+    "format": " {:%H:%M}",
+    "tooltip": "true",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": " {:%d/%m}"
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "icon": true,
+    "separate-outputs": true,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "$1"
+    }
+  },
+  "hyprland/workspaces": {
+    "all-outputs": true,
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1",
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      // "4": "",
+      // "5":  "五",
+      // "6":  "六",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "default": "",
+      "sort-by-number": true
+    }
+  },
+  "custom/playerlabel": {
+    "format": "<span>{}</span>",
+    "return-type": "json",
+    "max-length": 32,
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}} - {{artist}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next"
+  },
+  "memory": {
+    "format": "󰍛 {}%",
+    "format-alt": "󰍛 {used}/{total} GiB",
+    "interval": 10
+  },
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "format-alt": "󰻠 {avg_frequency} GHz",
+    "interval": 10
+  },
+  "network": {
+    "format-wifi": "󰤨",
+    "format-ethernet": "",
+    "format-linked": "",
+    "format-disconnected": "󰤭",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format": "{essid}",
+    "on-click-right": "nm-connection-editor"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 0%",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "bash ~/.config/hypr/scripts/Volume.sh --toggle",
+    "on-scroll-up": "bash ~/.config/hypr/scripts/Volume.sh --inc",
+    "on-scroll-down": "bash ~/.config/hypr/scripts/Volume.sh --dec",
+    "scroll-step": 5,
+    "on-click-right": "pavucontrol"
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "  0%",
+    "on-click": "bash ~/.config/hypr/scripts/Volume.sh --toggle-mic",
+    "on-scroll-up": "bash ~/.config/hypr/scripts/Volume.sh --mic-inc",
+    "on-scroll-down": "bash ~/.config/hypr/scripts/Volume.sh --mic-dec",
+    "on-click-right": "pavucontrol",
+    "scroll-step": 5
+  },
+  "tray": {
+    "spacing": 10,
+  },
+  "custom/cava_mviz": {
+    "exec": "~/.config/waybar/scripts/WaybarCava.sh",
+    "format": "{}"
+  },
+  "custom/swaync-client": {
+    "on-click": "swaync-client -op",
+    "format": ""
+  }
+}
