@@ -32,7 +32,8 @@
     "icon": true,
     "separate-outputs": true,
     "rewrite": {
-      "(.*) — Mozilla Firefox": "$1"
+      "(.*) — Mozilla Firefox": "$1",
+      "(.*) — Yandex Browser": "Yandex Browser",
     }
   },
   "hyprland/workspaces": {
