@@ -81,3 +81,8 @@ PortProton.conf
 trashrc
 user-dirs.locale
 kdenlive-layoutsrc
+KDE/
+go/
+plasma-workspace/
+torbrowser/
+unityhub/
